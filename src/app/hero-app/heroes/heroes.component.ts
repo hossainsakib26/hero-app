@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Ihero} from '../i-hero-types/Ihero';
+import {IHero} from '../i-hero-types/IHero';
 
 @Component({
   // @Component is a decorator function that specifies the Angular metadata for the component.
@@ -10,13 +10,12 @@ import {Ihero} from '../i-hero-types/Ihero';
 export class HeroesComponent implements OnInit {
 
   // property
-  hero: Ihero = {id: 1, name: 'Windstorm'};
+  hero: IHero = {id: 1, name: 'Windstorm'};
 
   constructor() {
   }
 
   ngOnInit(): void {
-    console.log(this.hero.name);
   }
 
 }
