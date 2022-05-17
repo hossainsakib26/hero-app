@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+
 import {IHero} from '../i-hero-types/IHero';
+import {HEROES} from '../modal/mock-heroes'
+import {Hero} from "../modal/hero";
 
 @Component({
   // @Component is a decorator function that specifies the Angular metadata for the component.
@@ -10,7 +13,8 @@ import {IHero} from '../i-hero-types/IHero';
 export class HeroesComponent implements OnInit {
 
   // property
-  hero: IHero = {id: 1, name: 'Windstorm'};
+  heroes = HEROES;
+  selectedHero?: Hero;
 
   constructor() {
   }
@@ -18,4 +22,8 @@ export class HeroesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSelect(hero: Hero) {
+    console.log(hero);
+    this.selectedHero = hero;
+  }
 }
