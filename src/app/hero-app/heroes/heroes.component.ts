@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 
-import {IHero} from '../i-hero-types/IHero';
 import {HEROES} from '../modal/mock-heroes'
 import {Hero} from "../modal/hero";
+import {HeroService} from "../services/hero.service";
 
 @Component({
   // @Component is a decorator function that specifies the Angular metadata for the component.
@@ -16,7 +16,7 @@ export class HeroesComponent implements OnInit {
   heroes = HEROES;
   selectedHero?: Hero;
 
-  constructor() {
+  constructor(heroService: HeroService) {
   }
 
   ngOnInit(): void {
