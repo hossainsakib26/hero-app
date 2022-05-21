@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './hero-app/heroes/heroes.component';
 import { HeroDetailComponent } from './hero-app/hero-detail/hero-detail.component';
+import { MessagesComponent } from './common-needs/messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,

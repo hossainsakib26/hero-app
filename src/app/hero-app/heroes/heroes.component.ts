@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 import {Hero} from "../modal/hero";
 import {HeroService} from "../services/hero.service";
+import {MessageService} from "../../common-needs/services/message.service";
 
 @Component({
   // @Component is a decorator function that specifies the Angular metadata for the component.
@@ -15,21 +16,22 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
   selectedHero?: Hero;
 
-  constructor(private heroService: HeroService) {
+  constructor(private heroService: HeroService,
+              private messageService: MessageService) {
   }
 
   ngOnInit(): void {
-
     this.getHeroes();
-
   }
 
   onSelect(hero: Hero) {
-    console.log(hero);
     this.selectedHero = hero;
+    this.messageService.add(`HeroesComponent: Selected hero id = ${hero.id}`);
   }
 
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes().subscribe(heroes =>
+      (this.heroes = heroes)
+    );
   }
 }
