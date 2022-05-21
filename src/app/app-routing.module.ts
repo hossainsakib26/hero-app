@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 import {HeroesComponent} from "./hero-app/heroes/heroes.component";
 
-
 const routes: Routes = [
   {path: 'heroes', component: HeroesComponent}
 ];
@@ -16,4 +15,5 @@ const routes: Routes = [
     RouterModule
   ]
 })
+
 export class AppRoutingModule { }
