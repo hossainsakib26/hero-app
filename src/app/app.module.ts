@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
+import {AppComponent} from './app.component';
+import {AppRoutingModule} from './app-routing.module';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeroesComponent } from './hero-app/heroes/heroes.component';
-import { HeroDetailComponent } from './hero-app/hero-detail/hero-detail.component';
-import { MessagesComponent } from './common-needs/messages/messages.component';
+import {HeroesComponent} from './hero-app/heroes/heroes.component';
+import {HeroDetailComponent} from './hero-app/hero-detail/hero-detail.component';
+import {MessagesComponent} from './common-needs/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +17,11 @@ import { MessagesComponent } from './common-needs/messages/messages.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
