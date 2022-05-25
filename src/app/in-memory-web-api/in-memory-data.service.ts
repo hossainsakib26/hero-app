@@ -20,7 +20,7 @@ export class InMemoryDataService implements InMemoryDbService{
       {id: 19, name: 'Lady Thor'},
       {id: 20, name: 'Black Panther'},
     ];
-    // const heroes = HEROES;
+    console.log(`in data service ${{heroes}}`)
     return heroes;
   }
 
