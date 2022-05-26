@@ -18,10 +18,14 @@ export class HeroService {
   constructor(private messageService: MessageService, private http: HttpClient) { }
 
   getHeroes(): Observable<Hero[]> {
-    const data = this.http.get<Hero[]>(this.heroesUrl);
-    console.log(data);
-    return data;
+    const heroes = of(HEROES);
+    this.messageService.add('HeroService: fetched heroes');
+    return heroes;
   }
+
+  // getHeroes(): Observable<Hero[]> {
+  //   return this.http.get<Hero[]>(this.heroesUrl);
+  // }
 
   getHero(id: Number): Observable<Hero> {
     const hero = HEROES.find(h => h.id === id)!;
