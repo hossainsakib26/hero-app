@@ -13,19 +13,19 @@ import {MessageService} from "../../../app/common-needs/services/message.service
 })
 export class HeroService {
 
-  private heroesUrl: string = 'api/heroes'; //url to web api
+  private heroesUrl: string = 'http://localhost:3000/'; //url to web api
 
   constructor(private messageService: MessageService, private http: HttpClient) { }
 
-  getHeroes(): Observable<Hero[]> {
-    const heroes = of(HEROES);
-    this.messageService.add('HeroService: fetched heroes');
-    return heroes;
-  }
-
   // getHeroes(): Observable<Hero[]> {
-  //   return this.http.get<Hero[]>(this.heroesUrl);
+  //   const heroes = of(HEROES);
+  //   this.messageService.add('HeroService: fetched heroes');
+  //   return heroes;
   // }
+
+  getHeroes(): Observable<Hero[]> {
+    return this.http.get<Hero[]>(this.heroesUrl+'heroes');
+  }
 
   getHero(id: Number): Observable<Hero> {
     const hero = HEROES.find(h => h.id === id)!;
