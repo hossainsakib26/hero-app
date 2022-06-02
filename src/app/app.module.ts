@@ -8,9 +8,9 @@ import {HttpClientModule} from '@angular/common/http'
 
 import {HeroesComponent} from './hero-app/heroes/heroes.component';
 import {HeroDetailComponent} from './hero-app/hero-detail/hero-detail.component';
-import {MessagesComponent} from './common-needs/messages/messages.component';
+import {MessagesComponent} from './common-needs/components/messages/messages.component';
 import {DashboardComponent} from './hero-app/dashboard/dashboard.component';
-import {environment} from "../environments/environment.prod";
+import {HeroSearchComponent} from './common-needs/components/hero-search/hero-search.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +19,7 @@ import {environment} from "../environments/environment.prod";
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
+    HeroSearchComponent,
   ],
   imports: [
     BrowserModule,
