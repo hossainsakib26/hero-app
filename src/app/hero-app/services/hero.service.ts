@@ -66,13 +66,13 @@ export class HeroService {
   }
 
   /* GET heroes by name contains on search */
-  searchHeroes(searchData: string): Observable<Hero[]>{
-    const url = this.heroesUrl + 'heroes'
-    if (!searchData.trim()){return of([])}
+  searchHeroes(term: string): Observable<Hero[]>{
+    const url = this.heroesUrl + 'heroes/'
+    if (!term.trim()){return of([])}
 
-    return this.http.get<Hero[]>(`${url}/?name=${searchData}`).pipe(
+    return this.http.get<Hero[]>(`${url}?name=${term}`).pipe(
       tap(x => x.length ?
-        this.log(`found heroes matching "${searchData}"`) : this.log(`no heroes matching "${searchData}"`)),
+        this.log(`found heroes matching "${term}"`) : this.log(`no heroes matching "${term}"`)),
       catchError(this.handleError<Hero[]>(`SearchHeroes`, []))
     );
   }
