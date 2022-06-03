@@ -67,7 +67,7 @@ export class HeroService {
 
   /* GET heroes by name contains on search */
   searchHeroes(searchData: string): Observable<Hero[]>{
-    const url = this.heroesUrl + 'heroes/'
+    const url = this.heroesUrl + 'heroes'
     if (!searchData.trim()){return of([])}
 
     return this.http.get<Hero[]>(`${url}/?name=${searchData}`).pipe(
