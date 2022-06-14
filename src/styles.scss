@@ -44,3 +44,12 @@ button:disabled {
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* using scss variables to store breakpoints */
+$small-devices: 550px !global;
+$medium-devices: 768px !global;
+$big-devices: 950px !global;
+
+@media (min-width: $small-devices) {
+
+}
