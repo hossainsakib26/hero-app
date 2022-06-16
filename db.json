@@ -16,6 +16,7 @@
       "author": "typicode"
     }
   ],
+
   "comments": [
     {
       "id": 1,
@@ -33,9 +34,11 @@
       "postId": 1
     }
   ],
+
   "profile": {
     "name": "typicode"
   },
+
   "heroes": [
     {
       "id": 11,

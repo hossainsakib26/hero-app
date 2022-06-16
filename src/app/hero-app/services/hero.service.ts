@@ -36,7 +36,7 @@ export class HeroService {
     if (!term.trim()) {
       return of([])
     }
-    const url = this.heroesUrl + `/heroes?name=${term}`;
+    const url = this.heroesUrl + `/heroes?name_like=${term}`;
     const datam = this.http.get<Hero[]>(`${url}`).pipe(
       tap(
         x => x.length ?
