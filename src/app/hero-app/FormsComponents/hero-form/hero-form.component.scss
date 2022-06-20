@@ -1,0 +1,19 @@
+.flex-container {
+  width: 100%;
+  background: #dd442230;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .form-group{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.5rem;
+
+    input{
+
+    }
+  }
+}

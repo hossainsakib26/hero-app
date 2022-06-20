@@ -11,4 +11,11 @@ export class Hero {
     public alterEgo?: string,
   ) {  }
 
+
+  // public id: number = 0;
+  // public name: string = '';
+  // public power: string = '';
+  // public alterEgo?: string = '';
+
+
 }
