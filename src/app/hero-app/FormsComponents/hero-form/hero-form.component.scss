@@ -16,11 +16,16 @@
     justify-content: space-between;
     gap: 0.5rem;
 
+    .text-box {
+      width: 100%;
+      display: flex;
+      flex-flow: column nowrap;
 
-    input{
-      font-size: 1rem;
-      width: 80%;
-      border-radius: 0.25rem;
+      input{
+        font-size: 1rem;
+        width: 80%;
+        border-radius: 0.25rem;
+      }
     }
 
     select{
@@ -39,9 +44,11 @@
 
     .form-group{
       width: 100%;
-
-      input{
-        width: 60%;
+      .text-box{
+        
+        input{
+          width: 60%;
+        }
       }
 
       select{

@@ -1,0 +1,13 @@
+.ng-valid[required], ng-valid.required {
+  border-bottom: 0.25rem solid #44ff66;
+}
+
+/*:not(tagName) is use for if a class present in multiple tag that time if a specific tag you do not want to effect*/
+.ng-invalid:not(form){
+  border-bottom: 0.25rem solid #ff0000;
+}
+
+.alert-danger {
+  background-color: #ff005560;
+  color: red;
+}

@@ -8,7 +8,13 @@
 
     <div class="form-group">
       <label for="name">Name: </label>
-      <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+      <div class="text-box">
+        <input type="text" class="form-control" id="name" required
+               [(ngModel)]="model.name" name="name" #name="ngModel">
+        <div [hidden]="name.valid || name.pristine" class="alert-danger">
+          *Name is Required.
+        </div>
+      </div>
     </div>
 
     <div class="form-group">
