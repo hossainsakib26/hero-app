@@ -1,20 +1,52 @@
 .flex-container {
-  width: 100%;
+  width: 50%;
   background: #0000aa50;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   border-radius: 0.25rem;
+  font-family: Arial, "Times New Roman";
+  font-size: 1.25rem;
 
   .form-group{
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
+    justify-content: space-between;
     gap: 0.5rem;
 
-    input{
 
+    input{
+      font-size: 1rem;
+      width: 80%;
+      border-radius: 0.25rem;
+    }
+
+    select{
+      font-size: 1rem;
+      width: 80.75%;
+      border-radius: 0.25rem;
+    }
+  }
+}
+
+@media (max-width: 720px){
+  .flex-container {
+    width: 100%;
+    font-size: 0.95rem;
+
+
+    .form-group{
+      width: 100%;
+
+      input{
+        width: 60%;
+      }
+
+      select{
+        width: 62%;
+      }
     }
   }
 }
