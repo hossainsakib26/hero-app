@@ -21,10 +21,7 @@
       <label for="alterEgo">Alter Ego: </label>
       <div class="text-box">
         <input type="text" class="form-control" id="alterEgo" required
-               [(ngModel)]="model.alterEgo" name="alterEgo" #alterEgo="ngModel">
-        <div [hidden]="alterEgo.valid || alterEgo.pristine" class="alert-danger">
-          *Ego is Required.
-        </div>
+               [(ngModel)]="model.alterEgo" name="alterEgo">
       </div>
     </div>
 

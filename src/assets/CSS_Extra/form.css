@@ -10,4 +10,5 @@
 .alert-danger {
   background-color: #ff005560;
   color: #ffffff;
+  font-size: small;
 }
