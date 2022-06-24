@@ -24,8 +24,11 @@ export class HeroFormComponent {
       'Fetch any object at any distance',
       'Leslie Rollover'
     );
-    console.log('My hero is called ' + myHero.name); // "My hero is called SkyDog"
     return myHero;
+  }
+
+  newHero(){
+    this.model = new Hero(43, '', '')
   }
 
 }
