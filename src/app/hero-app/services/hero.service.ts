@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 //import observable for data, [of is a rxjs function symbol
-import {Observable, of} from 'rxjs';
+import {Observable, of, Subject} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {catchError, map, tap} from 'rxjs/operators';
 
@@ -20,6 +20,13 @@ export class HeroService {
   };
 
   constructor(private messageService: MessageService, private http: HttpClient) {
+  }
+
+  //need for auto refresh
+  private _refreshNeeded$ = new Subject<void>();
+
+  get refreshNeeded$() {
+    return this._refreshNeeded$;
   }
 
   getHeroes(): Observable<Hero[]> {
@@ -69,7 +76,10 @@ export class HeroService {
   addHero(hero: Hero): Observable<Hero> {
     const serverUrl = this.heroesUrl + '/heroes'
     return this.http.post<Hero>(serverUrl, hero, this.httpOptions).pipe(
-      tap((newHero: Hero) => this.log(`added hero w/ id = ${newHero.id}`)),
+      tap((newHero: Hero) => {
+        this.log(`added hero w/ id = ${newHero.id}`);
+        this._refreshNeeded$.next();
+      }),
       catchError(this.handleError<Hero>(`addHero`))
     );
   }

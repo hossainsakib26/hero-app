@@ -8,37 +8,29 @@ import {HeroService} from "../../services/hero.service";
   templateUrl: './hero-form.component.html',
   styleUrls: ['./hero-form.component.scss']
 })
+
 export class HeroFormComponent implements OnInit{
 
   powers = ['Really Smart', 'Supper Flexible', 'Super Hot', 'Weather Changer'];
 
   heroes: Hero[] = [];
   model = new Hero();
-
   submitted = false;
 
   constructor(private _service: HeroService) {
-    _service.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
   ngOnInit(): void {
+  }
 
+  allHeroes(): void {
+    this.heroes.length = 0;
+    this._service.getHeroes().subscribe(heroes =>heroes.length > 0 ? this.heroes = heroes : console.log(`${heroes} is empty`));
   }
 
   onSubmit(hero: Hero){
-    this._service.addHero(hero).subscribe(c => this.heroes.push(c));
-    console.log(this.heroes);
+    this._service.addHero(hero).subscribe();
   }
-  //
-  // SkyDog(): Hero{
-  //   const myHero =  new Hero(
-  //     42,
-  //     'SkyDog',
-  //     'Fetch any object at any distance',
-  //     'Leslie Rollover'
-  //   );
-  //   return myHero;
-  // }
 
   newHero(){
     this.model = new Hero();

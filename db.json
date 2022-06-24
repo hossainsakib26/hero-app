@@ -68,6 +68,12 @@
     {
       "id": 18,
       "name": "Thor The Real Achoda"
+    },
+    {
+      "id": 19,
+      "name": "King Khan",
+      "power": "Super Hot",
+      "alterEgo": "Powerfull"
     }
   ]
 }
